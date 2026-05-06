@@ -12,7 +12,12 @@ RUN npm ci && npm cache clean --force
 # Código fuente
 COPY . .
 
-# Build
+# Build — placeholders para que payload.config.ts compile sin DB real
+# Los valores reales se inyectan en runtime via Cloud Run secrets
+ARG DATABASE_URL=postgresql://build:build@localhost:5432/build
+ARG PAYLOAD_SECRET=build-placeholder-secret
+ENV DATABASE_URL=$DATABASE_URL
+ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 
