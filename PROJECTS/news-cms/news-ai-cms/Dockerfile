@@ -1,33 +1,48 @@
-FROM node:20-alpine
+# ── Stage 1: builder ─────────────────────────────────────────────────────────
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Build tools para compilar módulos nativos (sharp, pg)
+# Build tools for native modules (sharp, pg)
 RUN apk add --no-cache python3 make g++ libc6-compat
 
-# Dependencias (todas: devDeps son necesarias para next build)
+# Install all deps (devDeps needed for next build)
 COPY package*.json ./
-RUN npm ci && npm cache clean --force
+RUN npm ci
 
-# Código fuente
+# Source code
 COPY . .
 
-# Build — placeholders para que payload.config.ts compile sin DB real
-# Los valores reales se inyectan en runtime via Cloud Run secrets
+# Placeholders so payload.config.ts compiles without a real DB.
+# Real values are injected at runtime via Cloud Run secrets.
 ARG DATABASE_URL=postgresql://build:build@localhost:5432/build
 ARG PAYLOAD_SECRET=build-placeholder-secret
 ENV DATABASE_URL=$DATABASE_URL
 ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_OPTIONS="--max_old_space_size=4096"
+
 RUN npm run build
 
-# Reducir a dependencias de producción para runtime
-RUN npm prune --omit=dev
+# ── Stage 2: runner ──────────────────────────────────────────────────────────
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
+RUN apk add --no-cache libc6-compat
 
 ENV NODE_ENV=production
-# Default PORT for local `docker run`. Platforms like Railway/Fly inject their
-# own $PORT and `next start` honours it automatically (no -p flag in npm start).
 ENV PORT=3000
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Copy built output and production deps only
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/payload.config.ts ./
+COPY --from=builder /app/src ./src
+COPY --from=builder /app/next.config.mjs ./
 
 EXPOSE 3000
 
