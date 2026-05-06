@@ -1,158 +1,159 @@
 ---
-last_updated: 2026-05-06T16:30:00Z
-account: empresa (sistemas@retarget.cl)
-next_account: personal (si aplica)
+last_updated: 2026-05-06T21:14:44.671Z
+branch: retarget/peaceful-dewdney-43f0f1
+last_commit: 3d180d7 docs: architecture implementation part 1 complete
+model: claude-sonnet-4-6
+account: sistemas@retarget.cl
 ---
 
-# 🤝 HANDOFF: ESTADO ACTUAL DEL PROYECTO
+# 🤝 HANDOFF — ESTADO ACTUAL
 
-## 📍 CONTEXTO GENERAL
+> Auto-generated at end of session. Read this first when resuming in any account or model.
 
-**Proyecto:** Retarget Agency — Optimización Multi-Cliente  
-**Stack:** Next.js + Payload CMS + Google Cloud Run  
-**Focus:** Auto-administración + Performance + Analytics Evolutivo
+## 📍 WHERE WE ARE
 
----
-
-## ✅ COMPLETADO HOY (2026-05-06)
-
-### 1. Memory Consolidation
-- ✅ Creé `project_compass_protocol.md` — Protocolo COMPASS completo
-- ✅ Consolidé MEMORY.md a índice limpio (16 líneas)
-- ✅ Remové credenciales de `feedback_wp_futangue_methodology.md`
-- ✅ Estado: 4 archivos memory + index
-
-### 2. Análisis Puyehue-CL
-- ✅ `VISUAL_AUDIT_2026_05_06.md` — Imágenes pixeladas, mejoras visuales
-- ✅ `ARCHITECTURE_DIAGRAM.md` — Diagramas Mermaid + tech stack
-- ✅ Identificados: JPG 2.6-2.7MB sin optimizar
-
-### 3. Performance + Analytics
-- ✅ `PERFORMANCE_ANALYTICS_PLAN.md` — 3 fases (Google Ads, Core Web Vitals, Monitoring)
-- ✅ Ya tienen: GTM + GA4 + Meta Pixel + Consent Mode v2
-- ✅ Falta: Google Ads conversion tracking + Core Web Vitals optimization
-
-### 4. Auto-Administración
-- ✅ `AUTO_ADMIN_STRATEGY.md` — 3 opciones (A=Payload mejorado, B=Builder.io, C=Block-based custom)
-- ✅ ELEGIDA: **OPCIÓN B (Builder.io SaaS)** — Visual builder integrado
-
-### 5. Sistema Evolutivo
-- ✅ `project_evolutionary_system.md` — Stack necesario para ser "evolutivo + inteligente"
-- ✅ ELEGIDA: **OPCIÓN 2 (Production Grade)** — BigQuery + GA4 API + Claude Vision + A/B Testing
+**Project:** Retarget Agency — Secure Development Framework
+**Stack:** Next.js + Payload CMS + Google Cloud Run
+**Focus:** Secure Framework + puyehue-site-evolution skill
 
 ---
 
-## 🚀 EN PROGRESO (PRÓXIMAS ACCIONES)
+## ✅ DONE THIS SESSION
 
-### MEGA SKILL: `puyehue-site-evolution`
-**Estado:** Diseño completado, listo para crear
+Implementación PARTE 1: Skill puyehue-site-evolution documentada (SKILL.md + references + scripts). Framework docs (SECURE_FRAMEWORK, IMPLEMENTATION_PLAN, GITHUB_SETUP, SECURITY_HEADERS, SECRETS_MANAGEMENT). Security headers actualizados en next.config.mjs. HANDOFF es ahora parte del protocolo COMPASS y de toda skill.
 
-**Qué hace:**
+### Recent Commits
 ```
-INPUT: URL sitio (ej: puyehue.cl)
-↓
-✅ Optimización Visual + Performance (automático)
-✅ Auto-administración Builder.io (SaaS integrado)
-✅ Google Ads configurable desde admin UI
-✅ Monitoreo continuo + evolución automática
-
-OUTPUT: 
-- Sitio optimizado en Google Cloud Run
-- Admin Builder.io listo para cliente
-- Google Ads tracking configurado
-- Knowledge base de aprendizajes
+3d180d7 docs: architecture implementation part 1 complete
+8f13d07 feat: puyehue-site-evolution skill - part 1 (documentation)
+1f5da30 docs: week 1 progress report + manual configuration checklist
+5144f9c feat: week 1 github security + headers + secrets management
+a7f2875 backup: framework docs + puyehue analysis + memory files for account recovery
 ```
 
-**Stack Skill:**
-- Google Cloud Suite (BigQuery, Monitoring, Error Reporting)
-- GA4 API + BigQuery export
-- Claude AI + Vision (análisis + recomendaciones)
-- Playwright + Lighthouse CI (testing automático)
-- Builder.io API (auto-admin)
-- A/B Testing framework
-
-**Timeline:** 3-4 semanas
-
----
-
-## 📋 CONFIRMACIONES PENDIENTES
-
-**Antes de crear skill, necesito:**
-
+### Changed Files This Session
 ```
-1. Timeline ✅ (3-4 semanas OK)
-2. Builder.io account? ❓
-   - ¿Tienes ya?
-   - ¿O creo nueva cuenta?
-3. Google Ads desde admin? ❓
-   - ¿Cliente pone ID en UI?
-   - ¿O configuro yo?
+ARCHITECTURE_IMPLEMENTATION_PART1.md
 ```
 
 ---
 
-## 📚 DOCUMENTACIÓN GENERADA
+## 🚀 IN PROGRESS
 
-**En `/PROJECTS/puyehue/docs/`:**
-- VISUAL_AUDIT_2026_05_06.md
-- ARCHITECTURE_DIAGRAM.md
-- PERFORMANCE_ANALYTICS_PLAN.md
-- AUTO_ADMIN_STRATEGY.md
+### Skills Available
+```
+puyehue-site-evolution
+```
 
-**En `.claude/projects/.../memory/`:**
-- project_compass_protocol.md
-- project_cms_vision.md
-- project_evolutionary_system.md
-- feedback_mcp_reporting.md
-- feedback_wp_futangue_methodology.md
-
----
-
-## 🔌 PLUGINS INSTALADOS
-
-**Marketplace Claude:**
-- ✅ Greptile (search código) — disponible pero no conectado
-- ✅ Linear, GitHub, Asana (tracking)
-- ✅ Terraform, Firebase, Playwright (infra)
-- ✅ Otros 10+ (no críticos)
-
-**Necesarios para Skill:**
-- [ ] Google Cloud SDK
-- [ ] GA4 API key
-- [ ] Builder.io API key
-- [ ] BigQuery setup
+### Uncommitted Changes
+```
+m PROJECTS/puyehue
+ M skills/puyehue-site-evolution/SKILL.md
+?? skills/puyehue-site-evolution/scripts/update-handoff.mjs
+```
 
 ---
 
-## 🎯 PRÓXIMO PASO
+## 📋 DECISIONS MADE
 
-**Cuando regreses en otra cuenta:**
-
-1. Lee este HANDOFF.md
-2. Revisa `/docs/` para contexto visual
-3. Lee memory files en `.claude/projects/.../memory/`
-4. **ESTOY COMPLETAMENTE CONTEXTUALIZADO** — puedo continuar sin re-explicar
+- OPTION B frameworks existentes. Secure Framework 6 semanas. Skill puyehue 7 pasos. MCP as-is hasta Week 3-5. HANDOFF obligatorio fin de sesión. Repos: skills viven en news-ai-cms por ahora.
 
 ---
 
-## 💾 INSTRUCCIONES PARA SYNCRONIZACIÓN
+## ⏳ PENDING NEXT
 
-### Antes de cambiar de cuenta:
+1. Configurar GitHub manual — ver GITHUB_SETUP.md. 2. Week 2: Snyk + SonarQube + Jest. 3. Implementar scripts reales en skills/puyehue-site-evolution/scripts/
+
+---
+
+## 🚨 BLOCKERS
+
+GitHub config manual pendiente. MCP tiene rutas y credenciales hardcoded — aceptado temporalmente.
+
+---
+
+## 📚 KEY FILES TO READ
+
+To get full context, read in this order:
+
+```
+1. CONTEXT.md                              ← Full project context
+2. IMPLEMENTATION_PLAN.md                  ← 6-week roadmap
+3. SECURE_FRAMEWORK.md                     ← Framework overview
+4. skills/puyehue-site-evolution/SKILL.md  ← Main skill definition
+5. ARCHITECTURE_IMPLEMENTATION_PART1.md    ← What was built
+6. WEEK1_PROGRESS.md                       ← Week 1 checklist
+```
+
+---
+
+## 🔌 TOOLS AVAILABLE (MCP)
+
+```
+~/.claude/skills/
+├─ req-parse.md       ← Parse client emails into REQs
+├─ wp-maintain.md     ← Execute changes on WordPress sites
+├─ site-parity.md     ← Verify site matches template
+├─ site-qa.md         ← QA testing for sites
+└─ clone-section.md   ← Clone sections between sites
+
+skills/
+└─ puyehue-site-evolution/
+   └─ SKILL.md        ← Auto-optimize puyehue.cl (documented, scripts pending)
+```
+
+---
+
+## 🌍 SITES WE MANAGE
+
+```
+parquefutangue.com   ← WordPress
+puyehue.cl           ← WordPress (also Next.js migration planned)
+termasaguascalientes.cl ← WordPress
+news-ai-cms          ← Next.js + Payload CMS (this repo)
+```
+
+---
+
+## 🎯 WHERE TO CONTINUE
+
+```
+IMMEDIATE (< 1 hour):
+  → Configure GitHub security (GITHUB_SETUP.md)
+
+THIS WEEK (Week 2):
+  → Snyk + SonarQube + Jest setup (IMPLEMENTATION_PLAN.md Week 2)
+
+NEXT SESSION:
+  → Implement scripts in skills/puyehue-site-evolution/scripts/
+  → Start with: analyze-site.mjs (visual + performance)
+```
+
+---
+
+## 💾 ACCOUNT RECOVERY
+
+If sistemas@retarget.cl is lost, use another account and:
+
 ```bash
-# Auto-actualizo HANDOFF.md
-# Commiteo memory files a GitHub
-# Push a rama "context/ready"
-```
-
-### Al llegar a otra cuenta:
-```bash
-# Leo HANDOFF.md
-# Pull memory files desde GitHub
-# Importo contexto automáticamente
-# LISTO — sin retrasos
+git clone https://github.com/SistemasRetarget/news-ai-cms.git
+git checkout retarget/peaceful-dewdney-43f0f1
+# All context, docs, and code is here
 ```
 
 ---
 
-*Generado automáticamente por COMPASS — 2026-05-06*
-*Sistema de Memoria Sincronizada en producción*
+## 🔄 HOW TO RESUME
+
+1. Read this HANDOFF.md ← You are here
+2. Read CONTEXT.md for deeper context
+3. Read relevant skill SKILL.md
+4. Continue from "WHERE TO CONTINUE" section above
+
+**You don't need to re-explain anything. Context is complete.**
+
+---
+
+*Auto-generated by update-handoff.mjs*
+*2026-05-06T21:14:44.671Z*
+*Branch: retarget/peaceful-dewdney-43f0f1 | Last commit: 3d180d7 docs: architecture implementation part 1 complete*

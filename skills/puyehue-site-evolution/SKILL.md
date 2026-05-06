@@ -259,6 +259,23 @@ node scripts/capture-learning.mjs \
 // Updates "what works for Puyehue" knowledge base
 ```
 
+### 6. update-handoff.mjs ⚠️ OBLIGATORIO — SIEMPRE ÚLTIMO PASO
+```javascript
+// Auto-generates HANDOFF.md at end of EVERY session
+// Enables ANY Claude account/model to resume without context loss
+// Run this before ending the session, always
+```
+
+```bash
+# Llamar siempre al terminar una sesión
+node scripts/update-handoff.mjs \
+  --summary "Qué se hizo en esta sesión" \
+  --next "Qué viene próximo" \
+  --decisions "Decisiones tomadas"
+
+git add HANDOFF.md && git commit -m "handoff: update [date]" && git push
+```
+
 ---
 
 ## 📚 REFERENCES (See /references/)
