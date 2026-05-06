@@ -63,24 +63,31 @@ type: user
 
 ## Aplicación por tipo de comunicación
 
-### 📊 Reportes
+### 📊 Reportes (Técnicos)
 ```
 [Título directo]
 
 **Estado:**
-- ✅ Qué está hecho
-- ⏳ Qué está en progreso  
-- ❓ Qué está bloqueado
+- ✅ Qué está hecho (con decisiones técnicas)
+- ⏳ Qué está en progreso (bloqueadores técnicos)
+- ❓ Qué está pendiente (por qué)
 
-**La idea es:**
-[1-2 párrafos explicando dirección]
+**Decisión arquitectónica:**
+- Por qué elegimos X sobre Y
+- Trade-offs: rendimiento vs complejidad
+- Impacto: escalabilidad, mantenibilidad
+
+**Implementación:**
+- Stack: herramientas, versiones
+- Patrones: qué patrones aplicamos
+- Aprendizajes: qué descubrimos
 
 **Próximos pasos:**
-1. Paso 1
-2. Paso 2
-3. Paso 3
+1. Paso 1 (por qué es prioritario)
+2. Paso 2 (dependencias)
+3. Paso 3 (impacto esperado)
 
-**¿Qué hago?** → [opciones A/B/C]
+**Desafío técnico:** [opcional] Qué viene que requiere ingeniería
 ```
 
 ### 📧 Correos
