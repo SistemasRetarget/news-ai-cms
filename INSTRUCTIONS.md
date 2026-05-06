@@ -4,6 +4,31 @@
 
 ---
 
+## 🚀 TRIGGER: "modo compass"
+
+**Cuando Luis diga "modo compass":**
+
+```
+AUTOMÁTICO — Sin preguntas:
+1. Cargar HANDOFF.md (estado actual)
+2. Cargar CONTEXT.md (visión + decisiones)
+3. Cargar MEMORY.md (índice completo)
+4. Cargar VOZ_LUIS.md (tono + estructura)
+5. Cargar INSTRUCTIONS.md (este archivo)
+6. Cargar project_compass_protocol.md (protocolo)
+7. Estado: ✅ COMPLETAMENTE CONTEXTUALIZADO
+8. Siguiente: "¿Cuál es tu REQ?"
+```
+
+**Resultado:**
+- ✅ Totalmente actualizado
+- ✅ Sé dónde estamos
+- ✅ Hablo en tono Luis
+- ✅ Entiendo COMPASS protocol
+- ✅ Listo para acción inmediata
+
+---
+
 ## 📌 PRIORIDAD 1: Consultar `VOZ_LUIS.md`
 
 **ANTES de escribir cualquier cosa** (reportes, correos, chat, documentación):
