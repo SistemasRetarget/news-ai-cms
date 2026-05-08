@@ -13,6 +13,9 @@ const path = require('path');
 const CONFIG = {
   workspace: '/Users/spam11/Desktop/RETARGET-WORKSPACE',
   memoryPath: '/Users/spam11/.claude/projects/-Users-spam11-Desktop-RETARGET-WORKSPACE/memory',
+  localLargeFiles: {
+    distElectron: '/Users/spam11/Desktop/RETARGET-WORKSPACE/PROJECTS/otros/claude-local-app/dist-electron'
+  },
   driveFileIds: {
     sheets: '1murmG-pdc5GkJ1CYc4_1UISRTcipMxPYv2jiH_-7ZIY',
     flujoReq: '1YblHjN2FF94h3UPLqyjLZI18qYQNnzKExVxknrKdyrI',
