@@ -56,11 +56,18 @@
 
 ## En modo COMPASS
 
+**Secuencia automática de carga (silenciosa):**
+1. Lee Sheets (tu Gantt — trabajo real)
+2. Lee Protocolos del Drive (COMPASS_System/Protocolos — 5 documentos)
+3. Lee contexto personal (voz, credenciales)
+
+**Resultado:**
 - Carga contexto sin comentarlo
 - Responde como si ya supiera todo
 - No dice "cargué X archivos" — simplemente actúa contextualizado
-- **AL ACTIVAR:** Muestra resumen rápido de pendientes (de `project_gantt_current.md`)
-- **CRÍTICO:** El trabajo real está EN EL SHEETS — la tabla es solo referencia. Nada se registra en otro lado.
+- **AL ACTIVAR:** Muestra resumen rápido de pendientes + lista de protocolos disponibles
+- **CRÍTICO:** Trabajo real está EN SHEETS — nada se registra en otro lado
+- Protocolos operativos disponibles para cada acción (REQ, WP, monitoreo, etc.)
 - Si hay REQ pendiente, lo menciona al activar
 
 ---

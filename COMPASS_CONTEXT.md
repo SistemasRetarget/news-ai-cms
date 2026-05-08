@@ -24,6 +24,17 @@
 ## PROJECTS
 - /Users/spam11/Desktop/RETARGET-WORKSPACE/PROJECTS/REGISTRY.json
 
-## Google Sheets (via Drive MCP)
+## Google Sheets + Drive (via MCP)
+- /Users/spam11/Desktop/RETARGET-WORKSPACE/COMPASS_DRIVE_CONFIG.md (secuencia de lectura)
+
+### Sheets (tu trabajo real)
 - fileId: 1murmG-pdc5GkJ1CYc4_1UISRTcipMxPYv2jiH_-7ZIY
+- URL: https://docs.google.com/spreadsheets/d/1murmG-pdc5GkJ1CYc4_1UISRTcipMxPYv2jiH_-7ZIY/edit#gid=854866235
 - tool: mcp__8640bf08-fb09-4c65-bc08-69382bc0a6ab__read_file_content
+
+### Drive Protocolos (COMPASS_System/Protocolos)
+- Flujo Completo REQ: 1YblHjN2FF94h3UPLqyjLZI18qYQNnzKExVxknrKdyrI
+- Toma de Requerimientos: 18pElm2tWwXutQwh_b-YOwwymDtcVgY6g5YuM15obhrc
+- Monitoreo de Correos: 1Ce9ye9kNHck8GUHaDZaOZNBnGBakbaxrXuGYngf61aY
+- WordPress REST API: 1HgNcKjFQl4-rqpPYegjzPCKUG0apxHmOuOz2bBTjnig
+- Script REQs: 1huA5LVkU-uekwHRDZDDk6Y-ymz43SyAPeqjQ0qNVZM0
