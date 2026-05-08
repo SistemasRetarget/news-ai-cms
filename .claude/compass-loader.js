@@ -30,25 +30,21 @@ const CONFIG = {
 function validateLocalFiles() {
   const required = [
     'HANDOFF.md',
-    'METHODOLOGY.md',
-    'TOOLS.md',
-    'VOZ_LUIS.md',
     'VOZ_CLAUDE.md',
-    'SECURITY.md',
-    'LESSONS_LEARNED.md',
     'COMPASS_CONTEXT.md',
     'COMPASS_DRIVE_CONFIG.md',
     'PROJECTS/REGISTRY.json'
   ];
 
   const memory = [
+    'MEMORY.md',
     'project_gantt_current.md',
     'project_compass_protocol.md',
     'drive_protocolos_operativos.md',
     'feedback_compass_ux.md',
+    'feedback_sheets_source_of_truth.md',
     'claude_personality.md',
-    'VOZ_LUIS.md',
-    'MEMORY.md'
+    'compass_mode_trigger.md'
   ];
 
   const localStatus = required.map(f => ({
@@ -75,14 +71,10 @@ function validateLocalFiles() {
 async function loadLocalFiles() {
   const files = {
     handoff: 'HANDOFF.md',
-    methodology: 'METHODOLOGY.md',
-    tools: 'TOOLS.md',
-    vozLuis: 'VOZ_LUIS.md',
     vozClaude: 'VOZ_CLAUDE.md',
-    security: 'SECURITY.md',
-    lessonsLearned: 'LESSONS_LEARNED.md',
     compassContext: 'COMPASS_CONTEXT.md',
-    driveConfig: 'COMPASS_DRIVE_CONFIG.md'
+    driveConfig: 'COMPASS_DRIVE_CONFIG.md',
+    registry: 'PROJECTS/REGISTRY.json'
   };
 
   const promises = Object.entries(files).map(([key, filename]) =>
@@ -98,11 +90,14 @@ async function loadLocalFiles() {
 // Leer memoria en paralelo
 async function loadMemoryFiles() {
   const files = [
+    'MEMORY.md',
     'project_gantt_current.md',
     'project_compass_protocol.md',
     'drive_protocolos_operativos.md',
     'feedback_compass_ux.md',
-    'claude_personality.md'
+    'feedback_sheets_source_of_truth.md',
+    'claude_personality.md',
+    'compass_mode_trigger.md'
   ];
 
   const promises = files.map(filename =>
