@@ -26,15 +26,10 @@ account: empresa (sistemas@retarget.cl)
 | F-06c | Futangue EN | parquefutangue.com/en | Footer EN: Help → /en/contact-us-2/ | URL corregida a /en/contact-us/ | ✅ Completado | 04-may | 05-may |
 | F-06h | Futangue EN | parquefutangue.com/en | Fly Fishing sin botón descarga PDF | PDF subido (ID 6534), botón agregado | ⏳ Pendiente | 07-may | — |
 | T-01 | TAC | termasaguascalientes.cl | Landing excursiones desactualizada | Página clonada (ID 14807 → 20645), tabs reemplazados | ⏳ Pendiente | 29-apr | — |
-| T-02 | Puyehue | puyehue.cl | Botones Ven por el Día centrados + borde negro | 7 botones: align=left, border=none | ⏳ Pendiente | 27-apr | — |
 | T-03 | Cabañas | cabanas.parquefutangue.com | Subdominio sin WordPress | WordPress instalado + 5 páginas clonadas | ✅ Completado | 29-apr | 05-may |
 | T-04 | Pueblo La Dehesa | Shopify Algodones | Apps no usadas generan costos | Requiere 2FA de Leignayih | 🔴 Bloqueado | 29-apr | — |
 | T-05 | Futangue EN | parquefutangue.com/en | Duplicado de sección en home | Eliminada | ✅ Completado | 05-may | 05-may |
-| T-06 | Puyehue | puyehue.cl | Botones Daypass/Destino estilos inconsistentes | 6 botones actualizados: borde + hover #2d9c6c | ✅ Completado | 07-may | 07-may |
-| T-07 | Puyehue | puyehue.cl | REQ-003: Botones Daypass — aclaraciones | — | ✅ Completado | 05-may | — |
-| T-08 | Puyehue | puyehue.cl | REQ-003: Botones Daypass — aclaraciones | — | ✅ Completado | 05-may | — |
 | T-09 | TAC | termasaguascalientes.cl | Fwd: Ajustes HTP ven por el día | — | ⏳ Pendiente | 28-apr | — |
-| T-10 | Puyehue | puyehue.cl | Fwd: Ajustes landing excursiones TAC | — | ⏳ Pendiente | 29-apr | — |
 | T-11 | Futangue EN | parquefutangue.com/en | REQ-004: Landing Nueva — 5 aclaraciones | — | ⏳ Pendiente | 05-may | — |
 | T-12 | TAC | termasaguascalientes.cl | REQ-001: Botones — tamaño exacto | — | ⏳ Pendiente | 05-may | — |
 | T-13 | Futangue EN | parquefutangue.com/en | REQ-005: Futangue | — | ⏳ Pendiente | 05-may | — |
@@ -50,8 +45,6 @@ account: empresa (sistemas@retarget.cl)
 | **Cabañas** | cabanas.parquefutangue.com | WordPress + Elementor | Completado (T-03) |
 | **Pueblo La Dehesa** | puebloladehesa.cl | Next.js 15 + Payload CMS | En desarrollo (T-04 bloqueado) |
 | **CRM Comunitario** | cmr.socialtarget.cl | Next.js | Activo en revisión Meta |
-
-**NOTA:** Puyehue completado (T-02, T-06) — removido del roadmap principal.
 
 ---
 
