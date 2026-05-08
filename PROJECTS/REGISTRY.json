@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "updated": "2026-05-04",
+  "policy": "Nunca presentar URLs sin verificar con curl (HTTP 200) primero. Si falta info, bloquear y pedir al usuario.",
+  "projects": {
+    "puebloladehesa": {
+      "name": "Pueblo La Dehesa",
+      "service_name_cloudrun": "puebloladehesa-web",
+      "region": "europe-west1",
+      "url_production": "https://puebloladehesa.cl",
+      "url_qa": "https://pueblo-270024878418.europe-west1.run.app",
+      "url_qa_verified": true,
+      "url_qa_note": "El servicio se llama 'puebloladehesa-web' en Cloud Run pero la URL generada es 'pueblo-...' — PENDIENTE confirmar con: gcloud run services describe puebloladehesa-web --region=europe-west1",
+      "url_production_verified": true,
+      "stack": "Next.js 15 + Payload CMS 3 + PostgreSQL",
+      "repo": "PROJECTS/puebloladehesa/puebloladehesa-rediseno",
+      "status": "en desarrollo"
+    },
+    "news-ai-cms": {
+      "name": "News AI CMS",
+      "service_name_cloudrun": "cms-retarget-news",
+      "region": "europe-west1",
+      "url_production": "PENDIENTE",
+      "url_qa": "https://cms-retarget-news-201530409487.europe-west1.run.app",
+      "url_qa_verified": false,
+      "url_production_verified": false,
+      "stack": "Next.js + Payload CMS",
+      "repo": "PROJECTS/news-cms/news-ai-cms",
+      "status": "en desarrollo"
+    },
+    "crm-comunitario": {
+      "name": "CRM Comunitario",
+      "service_name_cloudrun": "N/A (host propio)",
+      "region": "N/A",
+      "url_production": "https://cmr.socialtarget.cl",
+      "url_qa": "https://cmr.socialtarget.cl",
+      "url_qa_verified": true,
+      "url_production_verified": true,
+      "stack": "Next.js",
+      "repo": "RETARGET-WORKSPACE (raíz)",
+      "status": "activo - en revisión Meta"
+    }
+  }
+}
