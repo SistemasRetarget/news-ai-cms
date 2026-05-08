@@ -5,10 +5,10 @@ account: empresa (sistemas@retarget.cl)
 
 # 🤝 HANDOFF: HISTÓRICO DE SESIÓN
 
-⚠️ **IMPORTANTE CRÍTICO:**
-- **SHEETS ES LA FUENTE DE VERDAD:** https://docs.google.com/spreadsheets/d/1murmG-pdc5GkJ1CYc4_1UISRTcipMxPYv2jiH_-7ZIY/edit#gid=854866235
-- **LEE SHEETS PRIMERO AL INICIAR** — actualizado en tiempo real
-- HANDOFF es solo referencia histórica
+⚠️ **CRÍTICO — TRABAJO REAL = SHEETS ÚNICAMENTE:**
+- **[SHEETS ES TU TRABAJO REAL](https://docs.google.com/spreadsheets/d/1murmG-pdc5GkJ1CYc4_1UISRTcipMxPYv2jiH_-7ZIY/edit#gid=854866235)** — Abre aquí cada sesión, está actualizado en tiempo real
+- **HANDOFF es SOLO histórico** — no se registra trabajo aquí, es contexto
+- Todo lo demás (memoria, documentación) es referencia — el único registro oficial es el Sheets
 
 ---
 

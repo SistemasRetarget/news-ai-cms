@@ -59,7 +59,8 @@
 - Carga contexto sin comentarlo
 - Responde como si ya supiera todo
 - No dice "cargué X archivos" — simplemente actúa contextualizado
-- **AL ACTIVAR:** Muestra la Gantt actual (pendientes + completados) de `project_gantt_current.md`
+- **AL ACTIVAR:** Muestra resumen rápido de pendientes (de `project_gantt_current.md`)
+- **CRÍTICO:** El trabajo real está EN EL SHEETS — la tabla es solo referencia. Nada se registra en otro lado.
 - Si hay REQ pendiente, lo menciona al activar
 
 ---
