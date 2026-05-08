@@ -36,3 +36,6 @@ node_modules/
 out/
 # Media optimizada (se regenera con npm run optimize-images)
 public/media/
+
+# Archivos grandes (leen localmente, no en GitHub)
+PROJECTS/otros/claude-local-app/dist-electron/
