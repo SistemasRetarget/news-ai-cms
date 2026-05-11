@@ -1,0 +1,22 @@
+# Credenciales (NUNCA en Git)
+secrets/google-sa.json
+secrets/gmail-oauth.json
+secrets/.env
+secrets/*.json
+
+# Logs
+*.log
+logs/
+
+# Node
+node_modules/
+package-lock.json
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Env
+.env.local
+.env.*.local
