@@ -171,6 +171,10 @@ def get_sheet_stats(sheets_service):
 def build_response(request_type, stats):
     """Construye respuesta según template + stats."""
 
+    # Firma fija para todos los emails
+    signature = """⚡ Zorrito — RETARGET
+sistemas@retarget.cl · retarget.cl"""
+
     if request_type == 'correction':
         # Template 2: Corrección Recibida
         response = f"""Hola,
@@ -179,13 +183,7 @@ Anotado. Revisamos el punto reportado.
 
 Corrección tomada. Lo resolvemos y confirmamos cuando esté live.
 
-📊 Estado actual:
-✅ {stats['completed_today']} completadas hoy
-⏳ {stats['in_progress']} en progreso
-⏲️ {stats['pending']} pendientes
-
-⚡ Zorrito — RETARGET
-sistemas@retarget.cl · retarget.cl"""
+{signature}"""
 
     elif request_type == 'status':
         # Template 4: Reporte Avance
@@ -201,8 +199,7 @@ Aquí el estado de las iniciativas:
 
 Estamos ejecutando en orden de prioridad. Reportamos cambios cuando hay movimiento.
 
-⚡ Zorrito — RETARGET
-sistemas@retarget.cl · retarget.cl"""
+{signature}"""
 
     else:
         # Template 5: Pedido de Aclaración (default)
@@ -214,8 +211,7 @@ Revisamos tu mensaje. Antes de ejecutar necesitamos confirmar un punto:
 
 En cuanto confirmes, lo tomamos de inmediato.
 
-⚡ Zorrito — RETARGET
-sistemas@retarget.cl · retarget.cl"""
+{signature}"""
 
     return response
 

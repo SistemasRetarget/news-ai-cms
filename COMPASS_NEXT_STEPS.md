@@ -132,11 +132,6 @@ Anotado. Revisamos el punto reportado.
 
 Corrección tomada. Lo resolvemos y confirmamos cuando esté live.
 
-📊 Estado actual:
-✅ 5 completadas hoy
-⏳ 3 en progreso
-⏲️ 2 pendientes
-
 ⚡ Zorrito — RETARGET
 sistemas@retarget.cl · retarget.cl
 ```
@@ -160,6 +155,7 @@ Aquí el estado de las iniciativas:
 Estamos ejecutando en orden de prioridad. Reportamos cambios cuando hay movimiento.
 
 ⚡ Zorrito — RETARGET
+sistemas@retarget.cl · retarget.cl
 ```
 
 ---
