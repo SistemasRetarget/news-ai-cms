@@ -54,7 +54,27 @@ fi
 echo "✅ SEO Validator: Score=$SEO_SCORE"
 echo ""
 
-# 3. Prepare Slack message (if SLACK_WEBHOOK_URL is set)
+# 3. Run CTA analyzer
+echo "⏳ CTA analyzer..."
+CTA_FILE="$REPORT_DIR/cta-$TIMESTAMP.json"
+python3 scripts/cta-analyzer.py "$URL" > "$CTA_FILE" 2>/dev/null || true
+
+if [ -f "$CTA_FILE" ]; then
+  CTA_SCORE=$(jq '.score' "$CTA_FILE" 2>/dev/null || echo "N/A")
+  CTA_COUNT=$(jq '.cta_count' "$CTA_FILE" 2>/dev/null || echo "0")
+  GA4_COVERAGE=$(jq '.tracking.coverage' "$CTA_FILE" 2>/dev/null || echo "0")
+  CTA_ISSUES=$(jq -r '.suggestions[]' "$CTA_FILE" 2>/dev/null | head -3)
+else
+  CTA_SCORE="Error"
+  CTA_COUNT="0"
+  GA4_COVERAGE="0"
+  CTA_ISSUES="Could not run analyzer"
+fi
+
+echo "✅ CTA Analyzer: Score=$CTA_SCORE CTAs=$CTA_COUNT GA4 Coverage=$GA4_COVERAGE%"
+echo ""
+
+# 4. Prepare Slack message (if SLACK_WEBHOOK_URL is set)
 if [ -n "$SLACK_WEBHOOK_URL" ]; then
   echo "📤 Sending to Slack..."
 
@@ -74,13 +94,23 @@ if [ -n "$SLACK_WEBHOOK_URL" ]; then
           "short": false
         },
         {
-          "title": "✨ SEO Score",
+          "title": "✨ On-Page SEO Score",
           "value": "$SEO_SCORE/100",
           "short": true
         },
         {
-          "title": "🔍 Issues",
+          "title": "🎯 CTA Analysis",
+          "value": "Score: $CTA_SCORE/100 | CTAs: $CTA_COUNT | GA4 Coverage: $GA4_COVERAGE%",
+          "short": true
+        },
+        {
+          "title": "🔍 SEO Issues",
           "value": "\`\`\`$SEO_ISSUES\`\`\`",
+          "short": false
+        },
+        {
+          "title": "💡 CTA Suggestions",
+          "value": "\`\`\`$CTA_ISSUES\`\`\`",
           "short": false
         },
         {
@@ -110,5 +140,6 @@ echo ""
 echo "📈 Full reports saved to:"
 echo "  - Lighthouse: $LIGHTHOUSE_FILE"
 echo "  - SEO Validator: $SEO_FILE"
+echo "  - CTA Analyzer: $CTA_FILE"
 echo ""
 echo "Done! 🎉"

@@ -23,7 +23,10 @@
 # SEO score + meta + schema + headings
 python3 scripts/seo-validator.py https://puyehue.cl/hot-sale-25
 
-# Salida JSON
+# CTA analyzer: GA4 tracking + copy quality + strategy
+python3 scripts/cta-analyzer.py https://puyehue.cl/hot-sale-25
+
+# Salida JSON (ejemplo)
 {
   "score": 85,
   "meta": {
@@ -34,9 +37,18 @@ python3 scripts/seo-validator.py https://puyehue.cl/hot-sale-25
   "schema": {"has_json_ld": true},
   "issues": ["✅ Meta title OK", "✅ H1 structure OK"]
 }
+
+# CTA Analyzer output
+{
+  "cta_count": 3,
+  "tracking": {"ga4_tracked": 2, "total": 3, "coverage": 66.7},
+  "score": 70,
+  "issues": ["✅ CTA count OK (3)", "⚠️ Only 2/3 CTAs tracked"],
+  "strategy": ["📢 Campaign Page Detected", "🔍 Add GA4 tracking to remaining CTA"]
+}
 ```
 
-### 2️⃣ Reporte completo (Lighthouse + SEO + Slack)
+### 2️⃣ Reporte completo (Lighthouse + SEO + CTA + Slack)
 
 ```bash
 # Sin Slack (solo reportes locales)
@@ -45,6 +57,11 @@ bash scripts/post-deploy-seo-report.sh https://puyehue.cl/hot-sale-25
 # Con Slack (requiere setup abajo)
 export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
 bash scripts/post-deploy-seo-report.sh https://puyehue.cl/hot-sale-25
+
+# Salida incluye:
+# - Lighthouse: Performance, Accessibility, SEO, Best Practices
+# - SEO Validator: Meta tags, headings, schema, alt text
+# - CTA Analyzer: GA4 tracking, copy quality, conversion strategy
 ```
 
 ---
@@ -93,6 +110,20 @@ gcloud secrets create SLACK_WEBHOOK_URL --data-file=- <<< "https://hooks.slack.c
 - ✅ Alt text en imágenes (> 80% coverage)
 
 **Score:** 0-100 basado en issues encontrados
+
+### CTA Analyzer (conversión)
+- 🎯 CTA detection (buttons, links con class cta/btn/action)
+- 📊 GA4 tracking coverage (% de CTAs tracked)
+- 📝 Copy quality (largo < 30 chars, action verbs, urgency)
+- 🔄 Conversion strategy (detecta campaign pages, sugiere A/B tests)
+- 💰 Strategic recommendations (urgency testing, secondary CTAs)
+
+**Tracking patterns validados:**
+- `data-event` attributes
+- `gtag()` calls en onclick
+- `ga-*` CSS classes
+
+**Score:** 0-100 basado en tracking coverage + copy quality
 
 ---
 
@@ -149,12 +180,16 @@ Antes de publicar una campaña:
 - [ ] Lighthouse SEO > 90
 - [ ] Links internos correctos
 - [ ] Mobile-friendly
+- [ ] **CTAs con GA4 tracking (data-event o gtag)**
+- [ ] **CTA copy con action verbs (Comprar, Reservar, etc)**
+- [ ] **Urgency language en campaign pages (Ahora, Hoy, Limitado)**
 
-**Script:**
+**Script — Validación completa:**
 ```bash
 bash scripts/post-deploy-seo-report.sh https://puyehue.cl/hot-sale-25
-# Si score > 85 y Lighthouse Performance > 80 → ✅ Publicar
-# Si score < 85 → ⚠️ Revisar issues antes de publicar
+# Genera reportes: Lighthouse + SEO Validator + CTA Analyzer
+# Si SEO score > 80 + CTA score > 70 + Lighthouse Perf > 75 → ✅ Publicar
+# Si alguno < umbral → ⚠️ Revisar issues antes de publicar
 ```
 
 ---
