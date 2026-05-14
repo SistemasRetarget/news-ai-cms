@@ -55,7 +55,7 @@ python3 scripts/cta-analyzer.py https://puyehue.cl/hot-sale-25
 bash scripts/post-deploy-seo-report.sh https://puyehue.cl/hot-sale-25
 
 # Con Slack (requiere setup abajo)
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+export SLACK_WEBHOOK_URL="<tu-webhook-url>"
 bash scripts/post-deploy-seo-report.sh https://puyehue.cl/hot-sale-25
 
 # Salida incluye:
@@ -75,19 +75,19 @@ bash scripts/post-deploy-seo-report.sh https://puyehue.cl/hot-sale-25
 3. Activa "Incoming Webhooks"
 4. "Add New Webhook to Workspace"
 5. Selecciona canal (ej: #compass-seo-reports)
-6. Copia el webhook URL: `https://hooks.slack.com/services/YOUR_WEBHOOK_HERE`
+6. Copia el webhook URL que te entrega Slack
 
 ### Paso 2: Guardar en env
 
 ```bash
 # Opción A: En ~/.zshrc o ~/.bashrc
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+export SLACK_WEBHOOK_URL="<tu-webhook-url>"
 
 # Opción B: En .env del workspace
-echo "SLACK_WEBHOOK_URL=https://hooks.slack.com/services/..." >> /Users/spam11/Desktop/RETARGET-WORKSPACE/.env
+echo "SLACK_WEBHOOK_URL=<tu-webhook-url>" >> /Users/spam11/Desktop/RETARGET-WORKSPACE/.env
 
 # Opción C: Cloud Secret Manager (Google Cloud)
-gcloud secrets create SLACK_WEBHOOK_URL --data-file=- <<< "https://hooks.slack.com/services/..."
+gcloud secrets create SLACK_WEBHOOK_URL --data-file=- <<< "<tu-webhook-url>"
 ```
 
 ---
@@ -213,7 +213,7 @@ npm install -g lighthouse
 
 ### "SLACK_WEBHOOK_URL not set"
 ```bash
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+export SLACK_WEBHOOK_URL="<tu-webhook-url>"
 ```
 
 ### "seo-validator.py: Permission denied"
