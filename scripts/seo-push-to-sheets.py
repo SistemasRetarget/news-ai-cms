@@ -12,6 +12,7 @@ Usage:
 import sys
 import json
 import argparse
+import os
 from datetime import datetime
 
 import warnings
@@ -20,7 +21,10 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-CREDENTIALS_FILE = "/Users/spam11/Desktop/RETARGET-WORKSPACE/retarget-mcp-2d37bb49c600.json"
+CREDENTIALS_FILE = os.environ.get(
+    "GCP_CREDENTIALS_FILE",
+    "/Users/spam11/Desktop/RETARGET-WORKSPACE/retarget-mcp-2d37bb49c600.json"
+)
 SHEET_ID = "1murmG-pdc5GkJ1CYc4_1UISRTcipMxPYv2jiH_-7ZIY"
 TAB_NAME = "SEO Reports"
 
