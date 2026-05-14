@@ -17,9 +17,11 @@ def fetch_page(url):
     """Fetch HTML from URL."""
     try:
         result = subprocess.run(
-            ["curl", "-sS", "-L", "--max-time", "10", url],
+            ["curl", "-sS", "-L", "--max-time", "10", "--compressed", url],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="ignore",
             timeout=15
         )
         if result.returncode == 0 and result.stdout:
@@ -83,6 +85,29 @@ def check_images(html):
         "alt_coverage": round((len(images_with_alt) / len(images) * 100), 1) if images else 100,
     }
 
+EXPECTED_GTM = {
+    "puyehue.cl": ["GTM-PN6RMTW"],
+    "termasaguascalientes.cl": ["GTM-MFWFWN7"],
+    "parquefutangue.com": ["GTM-PQ9P6ZD", "GTM-TPHH7L9R"],
+}
+
+def check_tracking(html, domain):
+    """Verify GTM containers are installed and correct."""
+    found_ids = list(set(re.findall(r'GTM-[A-Z0-9]+', html)))
+    expected = EXPECTED_GTM.get(domain, [])
+
+    missing = [gtm for gtm in expected if gtm not in found_ids]
+    unexpected = [gtm for gtm in found_ids if expected and gtm not in expected]
+
+    return {
+        "gtm_found": found_ids,
+        "gtm_expected": expected,
+        "gtm_missing": missing,
+        "gtm_unexpected": unexpected,
+        "gtm_ok": len(missing) == 0 and len(expected) > 0,
+        "has_datalayer": "dataLayer" in html,
+    }
+
 def validate_seo(url):
     """Main validation."""
     html = fetch_page(url)
@@ -90,15 +115,17 @@ def validate_seo(url):
         return {"error": f"Could not fetch {url}"}
 
     parsed_url = urlparse(url)
+    domain = parsed_url.netloc.replace("www.", "")
 
     result = {
         "url": url,
-        "domain": parsed_url.netloc,
+        "domain": domain,
         "path": parsed_url.path,
         "meta": extract_meta(html),
         "headings": check_headings(html),
         "schema": check_schema(html),
         "images": check_images(html),
+        "tracking": check_tracking(html, domain),
     }
 
     # Score
@@ -143,6 +170,22 @@ def validate_seo(url):
         issues.append(f"⚠️ Only {result['images']['alt_coverage']}% images have alt text")
     else:
         issues.append(f"✅ Alt text coverage: {result['images']['alt_coverage']}%")
+
+    tracking = result["tracking"]
+    if not tracking["gtm_expected"]:
+        issues.append("⚠️ Sitio no reconocido — GTM no validado")
+    elif tracking["gtm_missing"]:
+        score -= 20
+        issues.append(f"❌ GTM faltante: {', '.join(tracking['gtm_missing'])}")
+    elif tracking["gtm_unexpected"]:
+        score -= 5
+        issues.append(f"⚠️ GTM no esperado en página: {', '.join(tracking['gtm_unexpected'])}")
+    else:
+        issues.append(f"✅ GTM OK: {', '.join(tracking['gtm_found'])}")
+
+    if not tracking["has_datalayer"]:
+        score -= 5
+        issues.append("⚠️ dataLayer no encontrado")
 
     result["score"] = max(0, score)
     result["issues"] = issues
