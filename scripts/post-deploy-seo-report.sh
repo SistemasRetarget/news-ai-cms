@@ -136,6 +136,16 @@ else
   echo "⚠️  SLACK_WEBHOOK_URL not set - skipping Slack notification"
 fi
 
+# 5. Push to Google Sheets
+echo "📊 Pushing to Google Sheets..."
+python3 scripts/seo-push-to-sheets.py \
+  --seo "$SEO_FILE" \
+  --cta "$CTA_FILE" \
+  --lh-perf "$LH_SCORE" \
+  --lh-seo "$LH_SEO" \
+  --lh-acc "$LH_ACCESSIBILITY" \
+  --lh-bp "$LH_BEST_PRACTICES" 2>/dev/null || echo "⚠️  Could not push to Sheets"
+
 echo ""
 echo "📈 Full reports saved to:"
 echo "  - Lighthouse: $LIGHTHOUSE_FILE"
